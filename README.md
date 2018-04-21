@@ -22,22 +22,16 @@ $ vim /etc/apache2/sites-enabled/000-default.conf
 add:
 
 WSGIDaemonProcess flaskapp threads=5
-
 WSGIScriptAlias / /var/www/html/flaskapp/flaskapp.wsgi
-
 <Directory flaskapp>
-    
     WSGIProcessGroup flaskapp
-    
     WSGIApplicationGroup %{GLOBAL}
-    
     Order deny,allow
-    
     Allow from all
-    
 </Directory>
 
 after the line: DocumentRoot /var/www/html
+
 ## 8 step
 $ sudo apachectl restart #do it each time you make changes to the sever
 
