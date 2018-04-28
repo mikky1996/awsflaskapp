@@ -47,7 +47,7 @@ def getEvents():
         resp_list.append({'name':name, 'reason':reason, 'icon':icon, 'time':time})
     return jsonify({'resp':resp_list}), 200
 
-@app.route('/clearDB', methods=['PUT'])
+@app.route('/clearDB', methods=['GET'])
 def clearDB():
     conn = sqlite3.connect('/home/ubuntu/flaskapp/compToIphone.db')
     c = conn.cursor()
